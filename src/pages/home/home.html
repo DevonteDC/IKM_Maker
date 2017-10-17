@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      IKM Maker
+    </ion-title>
+    <ion-buttons end>
+      <button [disabled]="!user" icon-only ion-button (click)="login()">
+        <ion-icon name="log-in">
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="blackBackground">
+  <ion-item>
+<ion-label>User:</ion-label>
+  <ion-select [(ngModel)]="user">
+    <ion-option value="Google">Google</ion-option>
+    <ion-option value="Mr Cunningham">Mr Cunningham</ion-option>
+    <ion-option value="Starbucks">Starbucks</ion-option>
+    <ion-option value="Outback Steakhouse">Outback Steakhouse</ion-option>
+    <ion-option value="Stone Brewery">Stone Brewery</ion-option>
+  </ion-select>
+</ion-item>
+</ion-content>

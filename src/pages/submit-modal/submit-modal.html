@@ -1,0 +1,78 @@
+<!--
+  Generated template for the QuizInfoModal page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Submit Preferences</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="blackBackground" padding>
+
+      <ion-segment [(ngModel)]="purpose" color="light">
+        <ion-segment-button value="Employment" >
+          Employment
+        </ion-segment-button>
+        <ion-segment-button value="Rewards" >
+          Rewards
+        </ion-segment-button>
+      </ion-segment>
+
+      <ion-segment *ngIf="purpose" [(ngModel)]="category" color="light">
+
+        <ion-segment-button value="Server">
+          <ion-icon name="restaurant"></ion-icon>
+        </ion-segment-button>
+
+        <ion-segment-button value="Bartender">
+          <ion-icon name="color-fill"></ion-icon>
+        </ion-segment-button>
+
+        <ion-segment-button value="Wine" >
+          <ion-icon name="wine"></ion-icon>
+        </ion-segment-button>
+
+        <ion-segment-button value="Beer">
+          <ion-icon name="beer"></ion-icon>
+        </ion-segment-button>
+
+      </ion-segment>
+
+      <div *ngIf = "category">
+      <ion-item class="blackItem">
+        <ion-label>IKM Name</ion-label>
+        <ion-input type="text" placeholder="Input a name for your quiz" [(ngModel)]="name"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="name" class="blackItem">
+        <ion-label>Description</ion-label>
+        <ion-textarea rows="1" columns="1" id="messageInputBox" placeholder="description/pay-rate" (input)="change()" [(ngModel)]="description" required></ion-textarea>
+      </ion-item>
+    </div>
+    <div *ngIf="description">
+      <ion-item style="margin-top:10px">
+        <button ion-button full color="dark" (click)="sendToPublic()"> Send to Public
+        </button>
+      </ion-item>
+      <ion-item >
+        <button ion-button full color='dark' (click)="saveForLater()"> Save for later
+        </button>
+      </ion-item>
+
+      <ion-item style="margin-top:10px;">
+        <ion-label>UserName</ion-label>
+        <ion-input type="text" placeholder="Input User Email" [(ngModel)]="recipient"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <button ion-button full color="dark"> Send to User
+        </button>
+      </ion-item>
+    </div>
+</ion-content>

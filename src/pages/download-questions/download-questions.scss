@@ -1,0 +1,32 @@
+page-download-questions {
+  ion-segment{
+    border:white solid 1px;
+    margin-bottom:10px;
+  }
+  ion-segment-button{
+    border:white solid 1px;
+  }
+
+  ion-card-header{
+    white-space: normal;
+  }
+
+  .corner{
+    text-align: right;
+    padding:10px;
+    color:black;
+  }
+
+  .questionSection{
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .cardSection{
+    flex:9;
+  }
+  .buttonSection{
+    flex:1;
+  }
+}

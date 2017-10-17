@@ -1,0 +1,165 @@
+<!--
+  Generated template for the Create page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons left>
+    <button  ion-button icon-only (click)="goBackToMain()">
+    <ion-icon name="arrow-back"></ion-icon>
+    </button>
+
+    </ion-buttons>
+    <ion-buttons end>
+  <button  ion-button icon-only (click)="openDownloadQuestions()">
+    <ion-icon name="cloud-download"></ion-icon>
+  </button>
+  <button  ion-button icon-only (click)="openQuestionType()">
+    <ion-icon name="list-box"></ion-icon><p class="subscript">{{questionType}}</p>
+  </button>
+  <button  ion-button icon-only (click)="openTimeSettings()">
+    <ion-icon name="time"></ion-icon><p class="subscript">{{timer}}</p>
+  </button>
+  <button  ion-button icon-only (click)="newQuestion()">
+    <ion-icon name="add"></ion-icon><p class="subscript">{{questionCount}}</p>
+  </button>
+
+</ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="blackBackground">
+  <div  class="top-division" >
+
+    <ion-card  (click)="openQuestionEditor()">
+      <ion-card-header>
+        Question:
+      </ion-card-header>
+
+      <ion-card-content>
+        {{question}}
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+
+  <div class="middle-division">
+    <ion-list *ngIf="questionType == 'mc4'">
+      <ion-card  (click)="openAnswerEditor(0)">
+        <ion-card-header >
+          Correct Answer:
+        </ion-card-header>
+        <ion-card-content>
+          {{answers[0]}}
+        </ion-card-content>
+      </ion-card>
+      <ion-card  (click)="openAnswerEditor(1)">
+        <ion-card-header >
+          Incorrect Answer 1:
+        </ion-card-header>
+        <ion-card-content>
+          {{answers[1]}}
+        </ion-card-content>
+      </ion-card>
+      <ion-card  (click)="openAnswerEditor(2)">
+        <ion-card-header >
+          Incorrect Answer 2:
+        </ion-card-header>
+        <ion-card-content>
+          {{answers[2]}}
+        </ion-card-content>
+      </ion-card>
+      <ion-card  (click)="openAnswerEditor(3)">
+        <ion-card-header >
+          Incorrect Answer 3:
+        </ion-card-header>
+        <ion-card-content>
+          {{answers[3]}}
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+
+    <ion-list *ngIf="questionType == 'mc3'">
+      <ion-card  (click)="openAnswerEditor(0)">
+        <ion-card-header >
+          Correct Answer:
+        </ion-card-header>
+        <ion-card-content>
+          {{answers[0]}}
+        </ion-card-content>
+      </ion-card>
+      <ion-card  (click)="openAnswerEditor(1)">
+        <ion-card-header >
+          Incorrect Answer 1:
+        </ion-card-header>
+        <ion-card-content>
+          {{answers[1]}}
+        </ion-card-content>
+      </ion-card>
+      <ion-card  (click)="openAnswerEditor(2)">
+        <ion-card-header >
+          Incorrect Answer 2:
+        </ion-card-header>
+        <ion-card-content>
+          {{answers[2]}}
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+
+
+    <ion-list *ngIf="questionType == 'mc2'">
+      <ion-card  (click)="openAnswerEditor(0)">
+        <ion-card-header >
+          Correct Answer:
+        </ion-card-header>
+        <ion-card-content>
+          {{answers[0]}}
+        </ion-card-content>
+      </ion-card>
+      <ion-card  (click)="openAnswerEditor(1)">
+        <ion-card-header >
+          Incorrect Answer 1:
+        </ion-card-header>
+        <ion-card-content>
+          {{answers[1]}}
+        </ion-card-content>
+      </ion-card>
+
+    </ion-list>
+
+    <ion-list *ngIf="questionType == 't/f'">
+      <ion-card  (click)="openTFAnswerEditor(0)">
+        <ion-card-header >
+          Correct Answer:
+        </ion-card-header>
+        <ion-card-content>
+          {{answers[0]}}
+        </ion-card-content>
+      </ion-card>
+      <ion-card *ngIf="answers[0] != ''">
+        <ion-card-header >
+          Incorrect Answer 1:
+        </ion-card-header>
+        <ion-card-content>
+          {{answers[1]}}
+        </ion-card-content>
+      </ion-card>
+
+    </ion-list>
+  </div>
+
+</ion-content>
+
+
+<ion-footer >
+  <ion-navbar>
+    <ion-title style="text-align:center;">
+      <button style="width:100%;margin:0px;" color="dark" ion-button (click)="reviewAndSubmit()">
+        Review and Submit
+      </button></ion-title>
+  </ion-navbar>
+</ion-footer>

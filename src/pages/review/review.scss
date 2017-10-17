@@ -1,0 +1,20 @@
+page-review {
+  ion-card-header{
+    white-space: normal !important;
+  }
+  .corner{
+    text-align: right;
+    padding:10px;
+    color:black;
+  }
+
+  .buttonSection{
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  ion-label{
+    white-space: normal;
+  }
+}

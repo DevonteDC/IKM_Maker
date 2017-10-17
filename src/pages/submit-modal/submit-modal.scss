@@ -1,0 +1,25 @@
+page-submit-modal {
+
+
+
+
+
+  .section{
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .blackItem{
+    background-color: black;
+    color:white;
+  }
+
+  ion-segment{
+    border:white solid 1px;
+    margin-bottom:10px;
+  }
+  ion-segment-button{
+    border:white solid 1px;
+  }
+}
